@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Danzen</title>
+  <meta name="description" content="Danzen is a fork of Dartotsu — track and manage your anime and manga lists on Android.">
+  <style>
+    :root {
+      --slate: #141822;
+      --slate-mid: #181c27;
+      --slate-high: #2a3040;
+      --yellow: #ffcc00;
+      --text: #e6e8ef;
+      --muted: #b9becc;
+      --outline: #5a6173;
+    }
+    * { box-sizing: border-box; }
+    body {
+      margin: 0;
+      font-family: system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
+      background: var(--slate);
+      color: var(--text);
+      line-height: 1.55;
+    }
+    a { color: var(--yellow); }
+    .wrap { max-width: 960px; margin: 0 auto; padding: 2rem 1.25rem 4rem; }
+    .hero {
+      text-align: center;
+      padding: 2.5rem 0 2rem;
+      border-bottom: 1px solid var(--outline);
+    }
+    .hero h1 {
+      font-size: clamp(2rem, 5vw, 2.75rem);
+      margin: 0 0 0.75rem;
+      letter-spacing: 0.02em;
+    }
+    .hero .tagline { color: var(--muted); font-size: 1.125rem; max-width: 36rem; margin: 0 auto; }
+    .hero .fork { margin-top: 1rem; font-size: 0.95rem; color: var(--muted); }
+    section { margin-top: 2.5rem; }
+    h2 {
+      font-size: 1.25rem;
+      margin: 0 0 1rem;
+      color: var(--yellow);
+    }
+    .cards {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      gap: 1rem;
+    }
+    .card {
+      background: var(--slate-mid);
+      border: 1px solid var(--outline);
+      border-radius: 12px;
+      padding: 1.25rem;
+    }
+    .card h3 { margin: 0 0 0.5rem; font-size: 1rem; color: var(--text); }
+    .card p { margin: 0; font-size: 0.9rem; color: var(--muted); }
+    .shots {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(140px, 1fr));
+      gap: 0.75rem;
+    }
+    .shots figure { margin: 0; }
+    .shots img {
+      width: 100%;
+      height: auto;
+      border-radius: 8px;
+      border: 1px solid var(--outline);
+      display: block;
+    }
+    .shots figcaption {
+      font-size: 0.75rem;
+      color: var(--muted);
+      margin-top: 0.35rem;
+      text-align: center;
+    }
+    .disclaimer {
+      background: var(--slate-high);
+      border-left: 3px solid var(--yellow);
+      padding: 1rem 1.25rem;
+      border-radius: 0 8px 8px 0;
+      font-size: 0.9rem;
+      color: var(--muted);
+    }
+    .download { text-align: center; margin-top: 2.5rem; }
+    .btn {
+      display: inline-block;
+      background: var(--yellow);
+      color: #1a1400;
+      font-weight: 600;
+      text-decoration: none;
+      padding: 0.85rem 1.75rem;
+      border-radius: 999px;
+      font-size: 1rem;
+    }
+    .btn:hover { filter: brightness(1.05); }
+    .private-note { margin-top: 0.75rem; font-size: 0.85rem; color: var(--muted); }
+  </style>
+</head>
+<body>
+  <div class="wrap">
+    <header class="hero">
+      <h1>Danzen</h1>
+      <p class="tagline">Track and manage your anime and manga lists in one place.</p>
+      <p class="fork">Danzen is a fork of <a href="https://github.com/aayush2622/Dartotsu">Dartotsu</a>.</p>
+    </header>
+
+    <section aria-labelledby="features-heading">
+      <h2 id="features-heading">Features</h2>
+      <div class="cards">
+        <article class="card">
+          <h3>Lists</h3>
+          <p>Manage your anime and manga lists across supported tracking services, with optional cross-account syncing.</p>
+        </article>
+        <article class="card">
+          <h3>Discovery</h3>
+          <p>Explore trending titles, browse popular picks, and search with filters.</p>
+        </article>
+        <article class="card">
+          <h3>Schedule</h3>
+          <p>Follow release schedules and get notified when new episodes arrive.</p>
+        </article>
+        <article class="card">
+          <h3>Personalization</h3>
+          <p>Customize themes, colors, and card styles to match how you browse.</p>
+        </article>
+      </div>
+    </section>
+
+    <section aria-labelledby="screenshots-heading">
+      <h2 id="screenshots-heading">Screenshots</h2>
+      <div class="shots">
+        <figure>
+          <img src="screenshots/anime-home.jpg" alt="Anime home with a featured title and recent updates" width="360" height="780">
+          <figcaption>Anime home</figcaption>
+        </figure>
+        <figure>
+          <img src="screenshots/manga-home.jpg" alt="Manga home with trending shelves" width="360" height="780">
+          <figcaption>Manga home</figcaption>
+        </figure>
+        <figure>
+          <img src="screenshots/search.jpg" alt="Search results with title cards and status chips" width="360" height="780">
+          <figcaption>Search</figcaption>
+        </figure>
+        <figure>
+          <img src="screenshots/profile.jpg" alt="Profile with list shelves" width="360" height="780">
+          <figcaption>Profile</figcaption>
+        </figure>
+        <figure>
+          <img src="screenshots/desktop-home.jpg" alt="Desktop home with a resume card and list shelves" width="640" height="360">
+          <figcaption>Desktop home</figcaption>
+        </figure>
+        <figure>
+          <img src="screenshots/desktop-anime.jpg" alt="Desktop anime home with a featured title" width="640" height="360">
+          <figcaption>Desktop anime</figcaption>
+        </figure>
+        <figure>
+          <img src="screenshots/desktop-title.jpg" alt="Title page with score, synopsis and details" width="640" height="360">
+          <figcaption>Title page</figcaption>
+        </figure>
+      </div>
+    </section>
+
+    <section aria-labelledby="notice-heading">
+      <h2 id="notice-heading">Tracking Only</h2>
+      <p class="disclaimer">Danzen is a tracking and list-management app. It does not host or distribute media. You are responsible for how you use the app and any third-party services you connect.</p>
+    </section>
+
+    <section class="download" aria-labelledby="download-heading">
+      <h2 id="download-heading">Get Danzen</h2>
+      <a class="btn" href="https://github.com/demi-code/danzen/releases/download/v1.1.1/Danzen-1.1.1.apk">Download for Android</a>
+      <p class="private-note">This build is hosted on a private repository. You need access to download the APK.</p>
+    </section>
+  </div>
+</body>
+</html>
