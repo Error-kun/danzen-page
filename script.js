@@ -10,9 +10,13 @@
   var inertSelector = "[data-inert]";
   var tooltipSelector = "[data-coming-soon]";
 
+  function themeAttr(choice) {
+    return choice === "default" ? "dark" : choice;
+  }
+
   function applyTheme(choice) {
     var root = document.documentElement;
-    root.setAttribute("data-theme", choice);
+    root.setAttribute("data-theme", themeAttr(choice));
     localStorage.setItem(THEME_KEY, choice);
 
     if (!themeSwitch) return;
@@ -25,10 +29,11 @@
 
   function initTheme() {
     var saved = localStorage.getItem(THEME_KEY);
+    if (saved === "dark") saved = "default";
     var choice =
-      saved === "light" || saved === "dark" || saved === "auto"
+      saved === "light" || saved === "default" || saved === "auto"
         ? saved
-        : "auto";
+        : "default";
     applyTheme(choice);
   }
 
