@@ -5,10 +5,21 @@
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta
       name="description"
-      content="Danzen — The NEXT Best App For Anime &amp; Manga. A Dartotsu fork for trackers, downloads, themes, and cross-platform use."
+      content="Danzen — The NEXT Best App For Anime &amp; Manga. A Dartotsu fork inspired by Saikou, Dantotsu, and ReDantotsu."
     />
     <title>Danzen — Anime &amp; Manga</title>
     <link rel="icon" href="assets/logo.png" type="image/png" />
+    <script>
+      (function () {
+        var key = "danzen-theme";
+        var saved = localStorage.getItem(key);
+        var theme =
+          saved === "light" || saved === "dark" || saved === "auto"
+            ? saved
+            : "auto";
+        document.documentElement.setAttribute("data-theme", theme);
+      })();
+    </script>
     <link rel="stylesheet" href="styles.css" />
   </head>
   <body>
@@ -21,21 +32,56 @@
           <span>Danzen</span>
         </a>
 
-        <button
-          type="button"
-          class="nav-toggle"
-          aria-expanded="false"
-          aria-controls="site-nav"
-          data-nav-toggle
-        >
-          <span class="nav-toggle-bar"></span>
-          <span class="nav-toggle-bar"></span>
-          <span class="nav-toggle-bar"></span>
-          <span class="visually-hidden">Menu</span>
-        </button>
+        <div class="header-actions">
+          <div
+            class="theme-switch"
+            role="group"
+            aria-label="Color theme"
+            data-theme-switch
+          >
+            <button
+              type="button"
+              class="theme-switch-btn is-active"
+              data-theme-choice="auto"
+              aria-pressed="true"
+            >
+              Auto
+            </button>
+            <button
+              type="button"
+              class="theme-switch-btn"
+              data-theme-choice="light"
+              aria-pressed="false"
+            >
+              Light
+            </button>
+            <button
+              type="button"
+              class="theme-switch-btn"
+              data-theme-choice="dark"
+              aria-pressed="false"
+            >
+              Dark
+            </button>
+          </div>
+
+          <button
+            type="button"
+            class="nav-toggle"
+            aria-expanded="false"
+            aria-controls="site-nav"
+            data-nav-toggle
+          >
+            <span class="nav-toggle-bar"></span>
+            <span class="nav-toggle-bar"></span>
+            <span class="nav-toggle-bar"></span>
+            <span class="visually-hidden">Menu</span>
+          </button>
+        </div>
 
         <nav id="site-nav" class="site-nav" data-nav>
           <a class="nav-link" href="#features">Features</a>
+          <a class="nav-link" href="#screenshots">Screenshots</a>
           <button
             type="button"
             class="nav-link nav-link--inert"
@@ -76,17 +122,14 @@
 
     <main id="main">
       <section class="hero" aria-labelledby="hero-title">
-        <div class="hero-bg" aria-hidden="true">
-          <span class="orb orb-a"></span>
-          <span class="orb orb-b"></span>
-          <span class="orb orb-c"></span>
-        </div>
-
         <div class="hero-grid">
           <div class="hero-copy">
             <h1 id="hero-title">Danzen</h1>
             <p class="tagline">The NEXT Best App For Anime &amp; Manga</p>
             <p class="lead">Danzen is a fork of Dartotsu.</p>
+            <p class="lead lead--secondary">
+              Inspired by Saikou, Dantotsu, and ReDantotsu.
+            </p>
 
             <div class="cta-row">
               <button
@@ -145,16 +188,15 @@
             </div>
           </div>
 
-          <div class="hero-visual" aria-hidden="true">
-            <div class="phone-mock">
-              <div class="phone-screen">
-                <span class="screen-bar"></span>
-                <span class="screen-block screen-block--wide"></span>
-                <span class="screen-block"></span>
-                <span class="screen-block"></span>
-                <span class="screen-block screen-block--short"></span>
-              </div>
-            </div>
+          <div class="hero-visual">
+            <figure class="hero-shot">
+              <img
+                src="assets/screenshots/anime-home.jpg"
+                width="390"
+                height="844"
+                alt="Anime home with a featured title and recent updates"
+              />
+            </figure>
           </div>
         </div>
       </section>
@@ -166,30 +208,123 @@
 
         <ul class="feature-grid">
           <li class="feature-card">
-            <h3>Trackers</h3>
-            <p>AniList, MyAnimeList, and other trackers in one place.</p>
+            <h3>Lists and trackers</h3>
+            <p>
+              Anime, manga, and novels with AniList, MyAnimeList, Simkl, Kitsu,
+              MangaBaka, and MangaUpdates.
+            </p>
           </li>
           <li class="feature-card">
-            <h3>Downloads</h3>
-            <p>Queue and manage downloads on device.</p>
+            <h3>Search and discovery</h3>
+            <p>Trending shelves, filters, and ways to find what to watch next.</p>
+          </li>
+          <li class="feature-card">
+            <h3>Schedules</h3>
+            <p>Release calendars and reminders when new episodes land.</p>
+          </li>
+          <li class="feature-card">
+            <h3>Social</h3>
+            <p>Profiles, feeds, stories, groups, and comments on titles.</p>
           </li>
           <li class="feature-card">
             <h3>Themes</h3>
-            <p>Colors, cards, and layout you can change.</p>
+            <p>Built-in palettes, glass cards, and layout you can tune.</p>
           </li>
           <li class="feature-card">
-            <h3>Discord RPC</h3>
-            <p>Show what you are watching or reading.</p>
+            <h3>Downloads</h3>
+            <p>Queue and manage files on your device.</p>
+          </li>
+          <li class="feature-card">
+            <h3>Extensions</h3>
+            <p>Add third-party sources. Extensions are not shipped by Danzen.</p>
+          </li>
+          <li class="feature-card">
+            <h3>Discord presence</h3>
+            <p>Show friends what you are watching or reading.</p>
           </li>
           <li class="feature-card">
             <h3>Cross-platform</h3>
             <p>Android, Windows, Linux, macOS, and iOS.</p>
           </li>
-          <li class="feature-card">
-            <h3>Extensions</h3>
-            <p>Add sources with extensions. Extensions are third-party.</p>
-          </li>
         </ul>
+      </section>
+
+      <section
+        id="screenshots"
+        class="screenshots"
+        aria-labelledby="screenshots-title"
+      >
+        <div class="section-head">
+          <h2 id="screenshots-title">Screenshots</h2>
+        </div>
+
+        <div class="shot-group">
+          <h3 class="shot-group-title">Phone</h3>
+          <ul class="shot-grid shot-grid--phone">
+            <li class="shot-card">
+              <img
+                src="assets/screenshots/anime-home.jpg"
+                alt="Anime home with a featured title and recent updates"
+                loading="lazy"
+              />
+              <p>Anime Home</p>
+            </li>
+            <li class="shot-card">
+              <img
+                src="assets/screenshots/manga-home.jpg"
+                alt="Manga home with trending shelves"
+                loading="lazy"
+              />
+              <p>Manga Home</p>
+            </li>
+            <li class="shot-card">
+              <img
+                src="assets/screenshots/search.jpg"
+                alt="Search results with title cards and status chips"
+                loading="lazy"
+              />
+              <p>Search</p>
+            </li>
+            <li class="shot-card">
+              <img
+                src="assets/screenshots/profile.jpg"
+                alt="Profile with list shelves"
+                loading="lazy"
+              />
+              <p>Profile</p>
+            </li>
+          </ul>
+        </div>
+
+        <div class="shot-group">
+          <h3 class="shot-group-title">Desktop</h3>
+          <ul class="shot-grid shot-grid--desktop">
+            <li class="shot-card">
+              <img
+                src="assets/screenshots/desktop-home.jpg"
+                alt="Desktop home with a resume card and list shelves"
+                loading="lazy"
+              />
+              <p>Desktop Home</p>
+            </li>
+            <li class="shot-card">
+              <img
+                src="assets/screenshots/desktop-anime.jpg"
+                alt="Desktop anime home with a featured title"
+                loading="lazy"
+              />
+              <p>Desktop Anime</p>
+            </li>
+            <li class="shot-card">
+              <img
+                src="assets/screenshots/desktop-title.jpg"
+                alt="Title page with score, synopsis, and details"
+                loading="lazy"
+              />
+              <p>Media Info</p>
+            </li>
+          </ul>
+        </div>
       </section>
 
       <section class="inspired" aria-labelledby="inspired-title">
@@ -197,10 +332,9 @@
           <h2 id="inspired-title">Inspired By</h2>
         </div>
         <ul class="pill-row">
-          <li><span class="pill pill-saikou">Saikou</span></li>
-          <li><span class="pill pill-dantotsu">Dantotsu</span></li>
-          <li><span class="pill pill-redantotsu">ReDantotsu</span></li>
-          <li><span class="pill pill-dartotsu">Dartotsu</span></li>
+          <li><span class="pill">Saikou</span></li>
+          <li><span class="pill">Dantotsu</span></li>
+          <li><span class="pill">ReDantotsu</span></li>
         </ul>
       </section>
     </main>
