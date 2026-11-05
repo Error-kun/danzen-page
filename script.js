@@ -1,12 +1,46 @@
 (function () {
+  var THEME_KEY = "danzen-theme";
   var tooltip = document.querySelector("[data-tooltip]");
   var navToggle = document.querySelector("[data-nav-toggle]");
   var nav = document.querySelector("[data-nav]");
   var backdrop = document.querySelector("[data-nav-backdrop]");
   var brand = document.querySelector("[data-brand]");
+  var themeSwitch = document.querySelector("[data-theme-switch]");
 
   var inertSelector = "[data-inert]";
   var tooltipSelector = "[data-coming-soon]";
+
+  function applyTheme(choice) {
+    var root = document.documentElement;
+    root.setAttribute("data-theme", choice);
+    localStorage.setItem(THEME_KEY, choice);
+
+    if (!themeSwitch) return;
+    themeSwitch.querySelectorAll("[data-theme-choice]").forEach(function (btn) {
+      var active = btn.getAttribute("data-theme-choice") === choice;
+      btn.classList.toggle("is-active", active);
+      btn.setAttribute("aria-pressed", active ? "true" : "false");
+    });
+  }
+
+  function initTheme() {
+    var saved = localStorage.getItem(THEME_KEY);
+    var choice =
+      saved === "light" || saved === "dark" || saved === "auto"
+        ? saved
+        : "auto";
+    applyTheme(choice);
+  }
+
+  if (themeSwitch) {
+    themeSwitch.addEventListener("click", function (event) {
+      var btn = event.target.closest("[data-theme-choice]");
+      if (!btn) return;
+      applyTheme(btn.getAttribute("data-theme-choice"));
+    });
+  }
+
+  initTheme();
 
   document.querySelectorAll(inertSelector).forEach(function (el) {
     el.setAttribute("aria-disabled", "true");
