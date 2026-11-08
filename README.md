@@ -1,8 +1,8 @@
 # Danzen
 
-**Danzen** is the next app for anime and manga lists.
+**Danzen** keeps your anime, manga, and novel lists in one place, on Android, Windows, Linux, macOS, and iOS.
 
-Danzen is a fork of [Dartotsu](https://github.com/aayush2622/Dartotsu). It takes cues from [Saikou](https://github.com/saikou-app/saikou), [Dantotsu](https://git.rebelonion.dev/rebelonion/Dantotsu/), and [ReDantotsu](https://github.com/Secozzi/ReDantotsu).
+Danzen is a fork of Dartotsu, inspired by Saikou, Dantotsu, and ReDantotsu.
 
 > **Tracking only.** Danzen tracks lists. It does not host video, pages, or extensions. Extensions come from other people. You are responsible for how you use the app and anything you connect to it.
 
@@ -37,11 +37,17 @@ Danzen is a fork of [Dartotsu](https://github.com/aayush2622/Dartotsu). It takes
 
 Danzen is **not released yet**. There is no public build to install.
 
-| | |
-|---|---|
-| [Download](#) | [Discord](#) |
-| [View Source](#) | [Support](#) |
+When a build ships it will appear on the [releases page](https://github.com/Error-kun/danzen/releases).
 
-Live landing page: https://error-kun.github.io/danzen-page/
+- [Releases](https://github.com/Error-kun/danzen/releases)
+- [Star the project](https://github.com/Error-kun/danzen/stargazers)
 
-Application source lives in the private [demi-code/danzen](https://github.com/demi-code/danzen) repository. GitHub Pages for this site is hosted from [Error-kun/danzen-page](https://github.com/Error-kun/danzen-page).
+Live site: <https://error-kun.github.io/danzen-page/>
+
+## Hosting
+
+This repository is the public deployment mirror of the landing site and is the source for GitHub Pages. The canonical landing source is developed in a private repository and mirrored here.
+
+## License
+
+Danzen is licensed under the Unabandon Public License (UPL).

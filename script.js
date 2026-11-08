@@ -1,14 +1,10 @@
 (function () {
   var THEME_KEY = "danzen-theme";
-  var tooltip = document.querySelector("[data-tooltip]");
   var navToggle = document.querySelector("[data-nav-toggle]");
   var nav = document.querySelector("[data-nav]");
   var backdrop = document.querySelector("[data-nav-backdrop]");
   var brand = document.querySelector("[data-brand]");
   var themeSwitch = document.querySelector("[data-theme-switch]");
-
-  var inertSelector = "[data-inert]";
-  var tooltipSelector = "[data-coming-soon]";
 
   function themeAttr(choice) {
     return choice === "default" ? "dark" : choice;
@@ -46,45 +42,6 @@
   }
 
   initTheme();
-
-  document.querySelectorAll(inertSelector).forEach(function (el) {
-    el.setAttribute("aria-disabled", "true");
-  });
-
-  function showTooltip(target) {
-    if (!tooltip) return;
-    tooltip.textContent = "Coming soon";
-    tooltip.hidden = false;
-    var rect = target.getBoundingClientRect();
-    tooltip.style.top = rect.bottom + 8 + "px";
-    tooltip.style.left = rect.left + rect.width / 2 + "px";
-    tooltip.style.transform = "translateX(-50%)";
-  }
-
-  function hideTooltip() {
-    if (tooltip) tooltip.hidden = true;
-  }
-
-  document.querySelectorAll(tooltipSelector).forEach(function (el) {
-    el.addEventListener("mouseenter", function () {
-      showTooltip(el);
-    });
-    el.addEventListener("mouseleave", hideTooltip);
-    el.addEventListener("focus", function () {
-      showTooltip(el);
-    });
-    el.addEventListener("blur", hideTooltip);
-  });
-
-  function blockInert(event) {
-    var target = event.target.closest(inertSelector);
-    if (!target) return;
-    event.preventDefault();
-    event.stopPropagation();
-  }
-
-  document.addEventListener("click", blockInert, true);
-  document.addEventListener("auxclick", blockInert, true);
 
   function closeNav() {
     if (!nav || !navToggle) return;

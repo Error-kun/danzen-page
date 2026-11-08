@@ -275,6 +275,15 @@ button {
   outline: none;
 }
 
+.nav-link--inert {
+  cursor: default;
+}
+
+.nav-link--inert:hover {
+  background: transparent;
+  color: var(--text-muted);
+}
+
 .nav-link--inert:focus-visible {
   box-shadow: 0 0 0 2px var(--primary);
 }
@@ -368,15 +377,11 @@ button {
 }
 
 .lead {
-  margin: 0 0 0.65rem;
+  margin: 0 0 1.75rem;
   font-size: 1.0625rem;
   color: var(--text-muted);
   max-width: 34rem;
   font-weight: 500;
-}
-
-.lead--secondary {
-  margin-bottom: 1.75rem;
 }
 
 .cta-row {
@@ -433,6 +438,45 @@ button {
 .btn-ghost:hover {
   color: var(--text);
   background: var(--hover-bg);
+}
+
+.badge-row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  margin-bottom: 1rem;
+}
+
+.badge {
+  display: inline-flex;
+  align-items: center;
+  padding: 0.4rem 0.8rem;
+  border-radius: 999px;
+  border: 1px solid var(--primary);
+  background: var(--primary);
+  color: var(--on-primary);
+  font-size: 0.8125rem;
+  font-weight: 700;
+  text-decoration: none;
+  letter-spacing: 0.01em;
+}
+
+.badge:hover {
+  box-shadow: 0 0 18px var(--primary-dim);
+}
+
+.badge--muted {
+  background: transparent;
+  border-color: var(--border);
+  color: var(--text-muted);
+  cursor: default;
+}
+
+.release-note {
+  margin: 0 0 1.25rem;
+  font-size: 0.9375rem;
+  font-weight: 600;
+  color: var(--text-muted);
 }
 
 .platform-row {
@@ -633,18 +677,6 @@ button {
   color: var(--text-muted);
   font-size: 0.9375rem;
   font-weight: 500;
-}
-
-.tooltip {
-  position: fixed;
-  z-index: 200;
-  padding: 0.35rem 0.65rem;
-  border-radius: var(--radius-sm);
-  background: var(--surface-high);
-  border: 1px solid var(--border);
-  font-size: 0.8125rem;
-  pointer-events: none;
-  box-shadow: 0 8px 24px var(--shadow);
 }
 
 @media (min-width: 768px) {

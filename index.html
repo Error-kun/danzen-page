@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta
       name="description"
-      content="Danzen — The NEXT Best App For Anime &amp; Manga. A Dartotsu fork inspired by Saikou, Dantotsu, and ReDantotsu."
+      content="Danzen — keep your anime, manga, and novel lists in one place. A Dartotsu fork inspired by Saikou, Dantotsu, and ReDantotsu."
     />
     <title>Danzen — Anime &amp; Manga</title>
     <link rel="icon" href="assets/logo.png" type="image/png" />
@@ -122,38 +122,17 @@
         <nav id="site-nav" class="site-nav" data-nav>
           <a class="nav-link" href="#features">Features</a>
           <a class="nav-link" href="#screenshots">Screenshots</a>
-          <button
-            type="button"
-            class="nav-link nav-link--inert"
-            data-inert
-            data-coming-soon
+          <a
+            class="nav-link"
+            href="https://github.com/Error-kun/danzen/releases"
+            target="_blank"
+            rel="noopener"
           >
             Download
-          </button>
-          <button
-            type="button"
-            class="nav-link nav-link--inert"
-            data-inert
-            data-coming-soon
-          >
-            Discord
-          </button>
-          <button
-            type="button"
-            class="nav-link nav-link--inert"
-            data-inert
-            data-coming-soon
-          >
-            View Source
-          </button>
-          <button
-            type="button"
-            class="nav-link nav-link--inert"
-            data-inert
-            data-coming-soon
-          >
-            Support
-          </button>
+          </a>
+          <span class="nav-link nav-link--inert" aria-disabled="true">
+            Discord (soon)
+          </span>
         </nav>
       </div>
     </header>
@@ -165,65 +144,57 @@
         <div class="hero-grid">
           <div class="hero-copy">
             <h1 id="hero-title">Danzen</h1>
-            <p class="tagline">The NEXT Best App For Anime &amp; Manga</p>
-            <p class="lead">Danzen is a fork of Dartotsu.</p>
-            <p class="lead lead--secondary">
-              Inspired by Saikou, Dantotsu, and ReDantotsu.
+            <p class="tagline">Your anime, manga, and novel lists in one place</p>
+            <p class="lead">
+              Danzen is a fork of Dartotsu, inspired by Saikou, Dantotsu, and
+              ReDantotsu.
             </p>
 
-            <div class="cta-row">
-              <button
-                type="button"
-                class="btn btn-primary"
-                data-inert
-                data-coming-soon
+            <div class="badge-row">
+              <a
+                class="badge"
+                href="https://github.com/Error-kun/danzen/releases"
+                target="_blank"
+                rel="noopener"
               >
-                Download
-              </button>
-              <button
-                type="button"
-                class="btn btn-secondary"
-                data-inert
-                data-coming-soon
+                Not released yet
+              </a>
+              <a
+                class="badge"
+                href="https://github.com/Error-kun/danzen/stargazers"
+                target="_blank"
+                rel="noopener"
               >
-                Discord
-              </button>
-              <button
-                type="button"
-                class="btn btn-secondary"
-                data-inert
-                data-coming-soon
-              >
-                View Source
-              </button>
-              <a class="btn btn-ghost" href="#features">Features</a>
-              <button
-                type="button"
-                class="btn btn-secondary"
-                data-inert
-                data-coming-soon
-              >
-                Support
-              </button>
+                Star on GitHub
+              </a>
+              <span class="badge badge--muted" aria-disabled="true">
+                Discord coming soon
+              </span>
             </div>
+
+            <div class="cta-row">
+              <a
+                class="btn btn-primary"
+                href="https://github.com/Error-kun/danzen/releases"
+                target="_blank"
+                rel="noopener"
+              >
+                Releases
+              </a>
+              <a class="btn btn-ghost" href="#features">Features</a>
+            </div>
+
+            <p class="release-note">
+              Danzen is not released yet. There is no public build to install.
+            </p>
 
             <div class="platform-row" aria-label="Platforms">
               <div class="platform-badges">
-                <button type="button" class="platform-chip" data-inert>
-                  Android
-                </button>
-                <button type="button" class="platform-chip" data-inert>
-                  Windows
-                </button>
-                <button type="button" class="platform-chip" data-inert>
-                  Linux
-                </button>
-                <button type="button" class="platform-chip" data-inert>
-                  macOS
-                </button>
-                <button type="button" class="platform-chip" data-inert>
-                  iOS
-                </button>
+                <span class="platform-chip">Android</span>
+                <span class="platform-chip">Windows</span>
+                <span class="platform-chip">Linux</span>
+                <span class="platform-chip">macOS</span>
+                <span class="platform-chip">iOS</span>
               </div>
             </div>
           </div>
@@ -384,7 +355,6 @@
       <p>Extensions are third-party.</p>
     </footer>
 
-    <div class="tooltip" role="tooltip" hidden data-tooltip>Coming soon</div>
     <script src="script.js"></script>
   </body>
 </html>
